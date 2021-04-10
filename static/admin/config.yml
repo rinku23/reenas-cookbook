@@ -1,0 +1,23 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+media_folder: static/images
+public_folder: /img
+collections:
+  - name: 'reenas-cookbook'
+    label: 'Blog'
+    folder: 'content/blog'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Draft', name: 'draft', widget: 'string' }
+      - { label: 'Hero Image', name: 'image', widget: 'string' }
+      - { label: 'Ctegories', name: 'categories', widget: 'markdown' }
+      - { label: 'Tags', name: 'tags', widget: 'markdown' }
+      - { label: 'Type', name: 'type', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
